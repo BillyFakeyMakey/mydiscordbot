@@ -1,0 +1,1 @@
+.registry.npmjs.org/qs/6.5.1/node_modules/qs

@@ -1,0 +1,1 @@
+.registry.npmjs.org/discord.js/11.4.2/node_modules/discord.js
