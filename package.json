@@ -1,0 +1,11 @@
+{
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "express": "4.16.3",
+    "discord.js": "^11.4.2",
+    "axios": "^0.18.0",
+    "weather-js": "^2.0.0"
+  }
+}
