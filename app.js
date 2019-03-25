@@ -44,7 +44,7 @@ client.on('message', message => {
     .addField("Brak powodu. Podaj powód.");
  
     
-    if(!kReason) return message.channel.send(noreasonembed);
+    if(!kReason) return message.channel.send({noreasonembed});
         
         
 
