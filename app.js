@@ -37,7 +37,26 @@ client.on('message', message => {
         let kUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
     if(!kUser) return message.channel.send("Nie mogę znaleźć tego użytkownika!");
     let kReason = args.join(" ").slice(22);
-    if(!kReason) return message.channel.send("Podaj powód");
+    if(!kReason) return message.channel.send({noreasonembed});
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        //message.channel.send("Podaj powód");
+        
+        
+        
+        
+        
+        
+        
     if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("No can do pal!");
     if(kUser.hasPermission("MANAGE_MESSAGES")) return message.channel.send("Ta osoba nie moze zostac wyrzucona!");
 
