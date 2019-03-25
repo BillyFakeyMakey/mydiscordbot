@@ -38,14 +38,23 @@ client.on('message', message => {
     if(!kUser) return message.channel.send("Nie mogę znaleźć tego użytkownika!");
     let kReason = args.join(" ").slice(22);
     
-    const noreasonembed = new Discord.RichEmbed()
-    .setDescription("**Error**")
-    .setColor("#F20606")
-    .addField("Brak powodu. Podaj powód.");
+    
  
     
-    if(!kReason) return message.channel.send({noreasonembed});
+    if (!kReason) {
         
+    let noreasonembedkick = new Discord.RichEmbed()
+    .setDescription("~Error~")
+    .setColor("#F20606")
+    .addField("Brak powodu wyrzucenia.");
+        
+        
+        
+
+        
+
+        return message.channel.send(noreasonembedkick);
+        }
         
 
         //message.channel.send("Podaj powód");
@@ -77,7 +86,22 @@ client.on('message', message => {
         let bUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
     if(!bUser) return message.channel.send("Nie mogę znaleźć tego użytkownika!");
     let bReason = args.join(" ").slice(22);
-    if(!bReason) return message.channel.send(noreasonembed)
+    if(!bReason){
+        let noreasonembedban = new Discord.RichEmbed()
+        .setDescription("~Error~")
+        .setColor("#F20606")
+        .addField("Brak powodu zbanowania.");
+        
+        
+        
+
+        
+
+        return message.channel.send(noreasonembedban);
+        
+        
+        
+        }
     if(!message.member.hasPermission("MANAGE_MEMBERS")) return message.channel.send("No can do pal!");
     if(bUser.hasPermission("MANAGE_MESSAGES")) return message.channel.send("Ta osoba nie może zostać zbanowana!");
 
