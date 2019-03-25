@@ -61,6 +61,37 @@ client.on('message', message => {
         
         
     }
+    if (msg.startsWith(prefix +'BAN')) {
+        let bUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
+    if(!bUser) return message.channel.send("Nie mogę znaleźć tego użytkownika!");
+    let bReason = args.join(" ").slice(22);
+    if(!bReason) return message.channel.send("Podaj powód");
+    if(!message.member.hasPermission("MANAGE_MEMBERS")) return message.channel.send("No can do pal!");
+    if(bUser.hasPermission("MANAGE_MESSAGES")) return message.channel.send("Ta osoba nie może zostać zbanowana!");
+
+    let banEmbed = new Discord.RichEmbed()
+    .setDescription("~Ban~")
+    .setColor("#bc0000")
+    .addField("Zbanowany użytkownik", `${bUser} z ID ${bUser.id}`)
+    .addField("Zbanowany przez", `<@${message.author.id}> z ID ${message.author.id}`)
+    .addField("Zbanowany w", message.channel)
+    .addField("Kiedy", message.createdAt)
+    .addField("Powód", bReason);
+
+    let incidentchannel = message.guild.channels.find(`name`, "bansandkicks");
+    if(!incidentchannel) return message.channel.send("Nie mogę znaleźć kanału banów i kicków.");
+
+    message.guild.member(bUser).ban(bReason);
+    incidentchannel.send(banEmbed);
+
+
+    return;
+        
+        
+        
+        
+        
+    }
   
   
     if (msg.startsWith(prefix + 'POGODA')) { 
