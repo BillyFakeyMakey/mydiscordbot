@@ -19,7 +19,7 @@ client.on('message', message => {
     if (msg.startsWith(prefix + 'TLUMACZ')) {
        axios.get('https://translate.yandex.net/api/v1.5/tr.json/translate', {
     params: {
-      key: "trnsl.1.1.20190323T113002Z.52045309b63e652e.2b242185e12585e83caeb18ced293be26b9aae31",
+      key: process.env.YANDEX_API_KEY,
       text: message.content,
       lang: 'en'
     }
@@ -172,4 +172,4 @@ client.on('message', message => {
 
 
 
-client.login("NTI1OTc2NDM0NjAzNDU4NTYw.D3ekWQ.or8Gt-nzakSm-3LNz1PM1YyAmYQ")
+client.login(process.env.BOT_TOKEN)
