@@ -1,11 +1,29 @@
 {
+
+  "name": "Example",
+
+  "description": "Example",
+
+  "version": "0.0.0",
+
+  "main": "bot.js",
+
   "scripts": {
-    "start": "node app.js"
+
+    "start": "node bot.js"
+
   },
+
   "dependencies": {
-    "express": "4.16.3",
-    "discord.js": "^11.4.2",
+
+    "discord.js": "11.1.0",
+
+    "request": "2.81.0",
+    
     "axios": "^0.18.0",
+    
     "weather-js": "^2.0.0"
+
   }
+
 }
